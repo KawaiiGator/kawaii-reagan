@@ -131,17 +131,17 @@ class Eye(Shape):
         t.fillcolor(self.color)
         draw_circle(t, self.center, self.width / 2)
         if self.catchlight:
-            catchlight_point_large = rotate_point((self.center[0] + (self.width * 0.3),
+            catchlight_point_large = rotate_point((self.center[0] + (self.width * 0.25),
                                                    self.center[1]),
                                                   45 + self.rotation,
                                                   self.center)
-            catchlight_point_small = rotate_point((self.center[0] + (self.width * .1),
+            catchlight_point_small = rotate_point((self.center[0] + (self.width * .25),
                                                    self.center[1]),
-                                                  45 + self.rotation,
+                                                  45 + 180 + self.rotation,
                                                   self.center)
             t.fillcolor('white')
-            draw_circle(t, catchlight_point_large, self.width / 8)
-            draw_circle(t, catchlight_point_small, self.width / 24)
+            draw_circle(t, catchlight_point_large, self.width / 5)
+            draw_circle(t, catchlight_point_small, self.width / 15)
 
 
 def rotate_point(point, angle, center_point=(0, 0)):
